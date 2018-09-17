@@ -1,0 +1,14 @@
+The package consists of three main scripts:
+
+1)	Climatology
+	This script calculates the "first guess" for the estimation of the rainy season.
+	It is referred as step 2 in Seregina et al. 2018. 
+	There are two versions of the script:
+		a) climatology_stations.ncl is written for station data as input. 
+		b) climatology_sat.ncl is written for gridded datasets
+	
+	Both versions require a netcdf-file as input.
+	
+	The scripts perform following operations:
+	-- read data
+	-- estimate the month of lowest rainfall that marks the starting point of the hydrological year 
