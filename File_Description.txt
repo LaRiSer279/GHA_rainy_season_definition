@@ -34,3 +34,8 @@ The package consists of three main scripts:
 	get_rainy_periods		determines periods above threshold
 	get_overlap				calculate overlap between rainy period and rainy seasons
 	get_onset				determines onset and cessation dates 
+	
+3)
+
+Additional files in this package:
+Examplary station data files: station_single.ncl and station_dual.ncl provide data from rainfall stations with a single-wet-season and dual-wet-season regimes, respectively. 
