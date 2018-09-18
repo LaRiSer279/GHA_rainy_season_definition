@@ -1,0 +1,36 @@
+The package consists of three main scripts:
+
+1)	Climatology:
+	This script calculates the "first guess" for the estimation of the rainy season.
+	It is referred as step 2 in Seregina et al. 2018. 
+	There are two versions of the script:
+		a) climatology_stations.ncl uses station data as input. 
+		b) climatology_sat.ncl uses gridded datasets
+	
+	Both versions require a netcdf-file as input.
+	
+	The scripts perform following operations:
+	-- read data
+	-- estimate the month of lowest rainfall that marks the starting point of the hydrological year
+	-- extracts hydrological years from rainfall time series
+	-- determines the availability of data per hydrological year
+	-- divides the year into pentads
+	-- calculates pentad averages
+	-- filtering
+	-- estimates threshold values and its confidence intervals
+	-- estimates climatological onset and cessation dates, including confidence intervals 
+	
+	
+2)	Functions: functions.ncl
+	This file contains all functions, that are used to estimate the rainy season onset and cessation:
+	get_ref_mon				calculates the driest month in the climatology, which marks the beginning of the hydrological year
+	year_avail				finds the start and end points for the year of interest
+	get_pentads				divides the year into pentads
+	avg_rain				calculates pentad averages
+	get_filtering			Lanczos-filtering of pentad averages
+	get_threshold			estimates the rainfall threshold by applying of the Alexandersson-test
+	climatology_intervals	estimates the climatological rainy season onset/cessation pentads
+	bootstrapping			estimates the confidence intervals of the rainfall threshold
+	get_rainy_periods		determines periods above threshold
+	get_overlap				calculate overlap between rainy period and rainy seasons
+	get_onset				determines onset and cessation dates 
