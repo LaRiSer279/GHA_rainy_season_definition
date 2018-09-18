@@ -1,1 +1,0 @@
-# GHA_rainy_season_definition
