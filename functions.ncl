@@ -307,8 +307,8 @@ begin
 	test2(:,dimsizes(tmp1)-1) = 0
 	ttt = local_max_1d((test2(1,:)+test2(0,:)), False, 0.0, 0)
 	ttl = local_max_1d((test2(1,:)+test2(0,:)), False, 0.0, 1)
-	print_table([/RR_1,(test2(1,:)+test2(0,:))/], "%f, %f")
-	print(ttt)
+	;print_table([/RR_1,(test2(1,:)+test2(0,:))/], "%f, %f")
+	;print(ttt)
 	
 	thres = [/ new(1, "float", -999.9), new(1, "integer", -999)/] 
 	if(num(ttt .ge. 8.85) .ge. 1)then
