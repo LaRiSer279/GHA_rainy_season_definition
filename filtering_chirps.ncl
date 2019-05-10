@@ -81,6 +81,7 @@ do ll = 0,dimLon
 					;filter
 					Tfilt_all(la,ll,i,:) = get_filtering(relrain)
 					
+					; cut end points
 					Tfiltered(la,ll,i,:) = Tfilt_all(la,ll,i,ind(.not. ismissing(Tfilt_all(la,ll,i,:))))
 					delete(pentads)
 					delete(relrain)

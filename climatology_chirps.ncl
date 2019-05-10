@@ -35,8 +35,8 @@ copy_VarCoords(rclim,thres)
 dimLon = dimsizes(lon)-1
 dimLat = dimsizes(lat)-1
 
-ind2 = ind_nearest_coord(21.125, lon, 0)
-  ind1 = ind_nearest_coord(19.875, lat, 0) 
+;ind2 = ind_nearest_coord(21.125, lon, 0)
+;  ind1 = ind_nearest_coord(19.875, lat, 0) 
 do ll = 0,dimLon
 	do la = 0,dimLat
 		print("Lon:" + lon(ll))
@@ -227,6 +227,7 @@ threshold!1 = "lon"
 threshold&lon = lon
 threshold!2 = "levels"
 threshold&levels = levels
+f->threshold = threshold
 f->threshold = (/thres/)
 
 ref_month = new((/dimsizes(lat), dimsizes(lon)/), "integer", -9999)
@@ -235,6 +236,7 @@ ref_month!0 = "lat"
 ref_month&lat = lat
 ref_month!1 = "lon"
 ref_month&lon = lon
+f->ref_month = ref_month
 f->ref_month = (/ref_mon/)
 
 clim = new(dimsizes(rclim), "integer", -9999)
@@ -251,6 +253,7 @@ clim!4 = "convention"
 clim&convention = convention
 clim!5 = "pen"
 clim&pen = pen
+f->clim = clim
 f->clim = (/rclim/)
 
 clim1 = new(dimsizes(rclim), "integer", -9999)
@@ -267,6 +270,7 @@ clim1!4 = "convention"
 clim1&convention = convention
 clim1!5 = "pen"
 clim1&pen = pen
+f->clim1 = clim1
 f->clim1 = (/rclim1/)
 
 clim2 = new(dimsizes(rclim), "integer", -9999)
@@ -283,6 +287,7 @@ clim2!4 = "convention"
 clim&convention = convention
 clim2!5 = "pen"
 clim2&pen = pen
+f->clim2 = clim2
 f->clim2 = (/rclim2/)
 
 ;; ============================================================
